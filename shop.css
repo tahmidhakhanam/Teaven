@@ -1,0 +1,423 @@
+/* CSS Document */
+@charset "UTF-8";
+/* CSS used here will be applied after bootstrap.css */
+/* The main typography is Josefin Sans and the secondary font is Open Sans - import the two fonts from Google Font --> */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+/* Website's main colours are specified at the root */ :root {
+  --orange: #D14B00;
+  --purple: #573C79;
+  --yellow: #E5AE00;
+  --brown: #241E13;
+  --pink: #F0D5CA;
+  --offwhite: #F7F1F1;
+}
+html, main {
+  overflow-x: hidden;
+}
+/* The font of the body text is in open sans, standard font size is 1rem = 16px and the font weight is 400 which is normal weight */
+body {
+  overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+/* The font of the headings are in Josefin Sans and the fallback font is Sans serif and font size for each heading is vary */
+h1, h2, h3, h4 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 800;
+  line-height: 1.5rem;
+  padding: 1.5rem;
+  text-shadow: -2px 1px 6px rgba(0, 0, 0, 0.32);
+}
+/* Most text colour is brown as it needs to stand out */
+h1, h2, p {
+  color: var(--brown);
+}
+h1 {
+  font-size: 2.6rem;
+}
+h2 {
+  font-size: 2.6rem;
+}
+h3 {
+  font-size: 1.2rem;
+  color: var(--brown);
+  padding-top: 2.3rem;
+}
+/* Link colour is offwhite, unless otherwise specified */
+a, a:hover, a:link, a:active, a:visited {
+  color: var(--offwhite);
+  text-decoration: none;
+}
+.animate-heading, .strap-line-heading{
+	color: var(--offwhite) !important;
+}
+.one-word-colour {
+	color: var(--orange);
+}
+/* Footer email link and phone link are purple when they're hover or active */
+.email-link:hover, .email-link:active, .phone-link:hover, .phone-link:active {
+  color: var(--purple);
+  text-decoration: none;
+}
+/* Colour of the footer paragraph is offwhite */
+.footer p {
+  color: var(--offwhite);
+}
+/* Setting style for the navigation - nav background colour is yellow */
+.navbar {
+  background-color: var(--yellow);
+}
+/* Nav is purple when it's not active or hover */
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--purple);
+  font-weight: 600;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+/* When nav is active, hover or focus it will turn to orange */
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link.active {
+  color: var(--orange);
+}
+.navbar-dark .navbar-toggler {
+  border: 0;
+}
+.navbar-toggler:focus, .navbar-toggler:active, .navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+}
+/* This is a nav toggle (hamburger menu) for mobile/tablet devices - the nav will change to a hamburger menu when the website is in mobile or tablet view */
+.navbar-dark .navbar-toggler-icon {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome; /* Declaring font awesome font for toggle- style | variant | weight | size/line-height | family */
+  font-size: inherit;
+  text-rendering: auto; /* This will provides the browswer with the information on how best to optimise when rendering text. In this case the text-rendering is set to auto which means that the browser should choose the appropriate method between speed, legibility and geometric precision */
+  background-image: none;
+  color: var(--purple);
+  -webkit-font-smoothing: antialiased; /* Remove and reduce the jagged distortions in font */
+  -moz-osx-font-smoothing: grayscale;
+}
+.navbar-dark .navbar-toggler-icon:before {
+  content: "\f0c9"; /* Using Font awesome for the hamburger icon. The icon is fetched using content value */
+}
+/* To make the nav responsive, aria-expanded attribute is being used to indicate the state of a collapsible element */
+.navbar-dark .navbar-toggler[aria-expanded=true] .navbar-toggler-icon:before {
+  content: "\f0c9";
+}
+/* Setting the logo size */
+.logo {
+  width: 27vh;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* Making that each product is next to each other by displaying them flex */
+.row-product > div[class*='col-'] {
+  display: flex;
+  padding-bottom: 4rem;
+}
+/* Jumbotron is being used to display a full width img and text - this is being used to draw the users' attention */
+.jumbotron {
+  position: relative;
+  overflow: hidden;
+  background-color:black;
+}
+.jumbotron video {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width:100%;
+  height:100%;
+  /*  object-fit is not supported on IE  */
+  object-fit: cover;
+  opacity:0.5;
+
+}
+.jumbotron .container {
+  z-index: 2;
+  position: relative;
+}
+.animate-heading {
+  animation-duration: 1.5s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+.product {
+  height: 150px;
+  width: 100%;
+}
+/* Styling the filter buttons */
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 0.875rem 2.1875rem;
+  margin: 1.5rem;
+  background-color: var(--brown);
+  border: 0;
+  border-radius: 2rem;
+  cursor: pointer;
+  color: var(--offwhite);
+  font-weight: 400;
+  font-size: 1rem;
+  overflow: hidden;
+  box-shadow: 0px 0.5rem 0.938rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+}
+.btn:hover {
+  text-decoration: none;
+  background-color: var(--orange);
+  box-shadow: 0px 6px 20px var(--brown);
+  color: var(--offwhite);
+  transform: translateY(-7px);
+  outline: 0;
+}
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none;
+  background-color: var(--orange);
+}
+/* Bootstrap card element is a extensible content container that includes options for headers, footers and a wide variety of content. */
+/* Each bubble tea is wrapped in a card element which allows control and customisation */
+.card {
+  border: none;
+  border-bottom: 0.2rem solid rgba(0, 0, 0, .125);
+}
+.card-title {
+  font-size: 1.1rem;
+  margin-bottom: 2.75rem
+}
+.card:hover p {
+  color: var(--offwhite);
+}
+/* Start of shake animation */
+.card:hover {
+  background-color: var(--purple);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  animation: shake 150ms 2 linear;
+  -moz-animation: shake 150ms 2 linear;
+  -webkit-animation: shake 150ms 2 linear;
+  -o-animation: shake 150ms 2 linear;
+}
+@keyframes shake {
+  0% {
+    transform: translate(3px, 0);
+  }
+  50% {
+    transform: translate(-3px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@-moz-keyframes shake {
+  0% {
+    -moz-transform: translate(3px, 0);
+  }
+  50% {
+    -moz-transform: translate(-3px, 0);
+  }
+  100% {
+    -moz-transform: translate(0, 0);
+  }
+}
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(3px, 0);
+  }
+  50% {
+    -webkit-transform: translate(-3px, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+  }
+}
+@-o-keyframes shake {
+  0% {
+    -o-transform: translate(3px, 0);
+  }
+  50% {
+    -o-transform: translate(-3px, 0);
+  }
+  100% {
+    -o-transform: translate(0, 0);
+  }
+}
+/* Hover shake animation end here */
+.card-text {
+  height: 80px;
+}
+.card::before, .card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  pointer-events: none;
+}
+.card::before {
+  transform-origin: left top;
+}
+.card::after {
+  transform-origin: right bottom;
+}
+.sectionContainer {
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+}
+.footer {
+  background-color: var(--orange);
+  color: var(--offwhite);
+  padding: 1.5rem;
+}
+/* Paddings of soical media icons, thoese icons are located in the footer */
+.fab {
+  padding-top: 4rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+/* padding for the shopping cart icon in navbar */
+.fas {
+  padding-left: 1rem;
+}
+/* Footer logo is set to 100% width - by setting the width 100% the logo will be responsive */
+.footer-logo {
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer .links ul {
+  list-style-type: none;
+}
+/* Styling footer contact info links */
+.footer .links li a {
+  color: var(--offswhite);
+  transition: color 0.2s;
+  line-height: 2.4rem;
+}
+.footer .links li a:hover {
+  text-decoration: none;
+  color: var(--brown);
+}
+.footer-socialmedia {
+  padding: 0;
+}
+.footer-socialmedia i {
+  font-size: 1.3rem;
+}
+/* Footer social media icons colour */
+.footer-socialmedia a {
+  color: var(--offwhite);
+  transition: color 0.2s;
+}
+.footer-socialmedia a:hover {
+  color: var(--brown);
+}
+/* Add a top border to the copyright text to separate it from the footer content */
+.footer .copyright p {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.py-5 {
+  padding-top: 0rem !important;
+  padding-bottom: 0 !important;
+}
+/* Design for tablet browsers */
+@media screen and (max-width: 768px) {
+  h1 {
+    line-height: 3.2rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+    line-height: 0;
+  }
+  h2 {
+    line-height: 2rem;
+  }
+  .box {
+    padding: 0;
+    margin: 0;
+  }
+  .py-5 {
+    padding-top: 5rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .jumbotron {
+    padding: 0;
+  }
+  .footer-socialmedia i {
+    font-size: 1.3rem;
+  }
+  /* Paddings of soical media icons */
+  .fab {
+    padding-top: 1.5rem;
+    padding-right: 1rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1rem;
+  }
+  h1, h2 {
+    line-height: 3.2rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+    line-height: 0;
+  }
+}
+/* styles for mobile browsers */
+@media screen and (max-width: 576px) {
+  .btn-toolbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  .btn {
+    width: 70%;
+    margin: 0.6rem;
+  }
+  h1 {
+    line-height: 3.2rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+    line-height: 0;
+  }
+  h2 {
+    line-height: 2rem;
+  }
+  .box {
+    padding: 0;
+    margin: 0;
+  }
+  /* Making that each product is next to each other by displaying them inline-block in mobile view */
+  /* !important rule will override all previous styling rules for this specific property on .row-product element */
+  .row-product > div[class*='col-'] {
+    display: inline-block !important;
+    padding-bottom: 4rem;
+  }
+  .py-5 {
+    padding-bottom: 2rem !important;
+    padding-top: 2rem !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
