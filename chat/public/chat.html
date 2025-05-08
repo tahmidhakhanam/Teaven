@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Google Font -->
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css?family=Carter+One">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Icon in tab -->
+<link rel="icon" type="image/png" href="img/favicon.png" sizes="32x32">
+<link rel="icon" type="image/png" href="img/favicon.png" sizes="16x16">
+    <title>Teaven - Live Chat</title>
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="row chat-header">
+        <div class="col-md-3 col-xs-6">
+          <h1 class="title text-center">Live Chat</h1>
+        </div>
+        <div class="col-md-3 col-xs-6">
+          <a id="leave-btn" class="btn leave-button"><i class="fas fa-sign-out-alt"></i> Leave Room</a>
+        </div>
+        </div>
+    
+
+      </header>
+      <main class="chat-main">
+        <div class="chat-messages"></div>
+      </main>
+      <div class="chat-form-container">
+        <form id="chat-form">
+          <div class="message-input">
+          <input
+            id="msg"
+            type="text"
+            class="message-input-field-chat name-input"
+            placeholder="Enter Message"
+            required
+            autocomplete="off"
+          />
+          </div>
+          <button class="send">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Font Awesome Kit --> 
+    <script src="https://kit.fontawesome.com/799d082bbd.js" crossorigin="anonymous"></script> 
+  </body>
+</html>
